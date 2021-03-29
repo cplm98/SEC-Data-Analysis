@@ -48,13 +48,10 @@ class ConvNet(nn.Module):
     def forward(self, data):
         data = self.length(data.unsqueeze(1))
         data = self.width(data.T).unsqueeze(0).unsqueeze(1)
-        
         out = self.block1(data)
         out = self.pool1(out)
         out = self.block2(out)
         out = self.pool2(out)
-        print(out)
-        print(out.shape)
         out = out.squeeze(0)
         out = self.fcblock(out).squeeze(2)
         out = out = self.fcblock(out)
