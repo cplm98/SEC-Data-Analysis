@@ -11,8 +11,6 @@ from nltk.stem import PorterStemmer
 import pandas as pd
 import numpy as np
 
-doc1 = open("./doc1.txt.", "r").read()
-doc2 = open("./doc2.txt", "r").read()
 
 def tokenize(document):
     stemmer = PorterStemmer()
@@ -50,7 +48,5 @@ def tfidf(corpus):
 
     return data
 
-
-out = (tfidf([doc1,doc2]))
     
         
