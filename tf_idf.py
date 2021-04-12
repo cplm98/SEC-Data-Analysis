@@ -44,7 +44,9 @@ def tfidf(corpus):
     
     data["df"] = data.index.get_level_values(1).map( data.index.get_level_values(1).value_counts() )
     
-    data["tfidf"] = np.log( n_doc*1/data["df"] )
+    data["idf"] = np.log( n_doc*1/data["df"] )
+    
+    data["tfidf"] = data["idf"]*data["tf"]
 
     return data
 
