@@ -9,6 +9,7 @@ sec-edgar-downloader = "*"
 pandas = "*"
 numpy = "*"
 beautifulsoup4 = "*"
+alpha-vantage = "*"
 
 [dev-packages]
 
